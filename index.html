@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <title>Gridify | jQuery Plugin</title>
+
+    <style type="text/css">
+      body {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        line-height: 1.5;
+      }
+
+      body > div {
+        width: 960px;
+        margin: 20px auto;
+      }
+
+      a {
+        display: block;
+      }
+
+      strong {
+        border-bottom: 1px dashed #777;
+        padding: 0 3px 2px;
+      }
+
+      ul, ol, li {
+        padding: 0;
+        margin: 0;
+      }
+
+      ul, ol {
+        list-style: none;
+      }
+
+      li {
+        font-weight: bold;
+      }
+
+      li > span {
+        font-weight: normal;
+      }
+
+      code {
+        display: block;
+        color: #888;
+        font-size: 0.9em;
+        line-height: 1.7;
+        padding: 8px;
+        text-align: left;
+        background: #eee;
+        border: 1px dashed #bbb;
+        max-width: 450px;
+        margin: 20px auto 0;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div>
+
+      <h1>Gridify | jquery.gridify.js</h1>
+
+      <p>
+      <i>Need a collection of elements to appear in a grid-like fashion?</i> The <strong>Gridify</strong> jQuery plugin makes this
+      simple...
+      </p>
+
+      <p>
+        Gridify depends on the <b>smartresize</b> jQuery plugin for smoother resize performance and should be loaded
+        <i>before</i> the Gridify script.
+      </p>
+
+      <h2 id="user">How to use</h2>
+      <p>
+      Load the <b>smartresize</b> and <strong>gridify</strong> plugins <i>(Keep this order)</i>:
+      <code>
+        &lt;script src="js/jquery.smartresize.js"&gt;&lt;/script&gt;<br />
+        &lt;script src="js/jquery.gridify.js"&gt;&lt;/script&gt;
+      </code>
+      </p>
+
+      <p>
+      Typical markup scenario, but <i>not</i> limited to:<br />
+      <code>
+        &lt;ul id="items"&gt;<br />
+          &nbsp;&nbsp;&lt;li&gt;First&lt;/li&gt;<br />
+          &nbsp;&nbsp;&lt;li&gt;Second&lt;/li&gt;<br />
+          &nbsp;&nbsp;&lt;li&gt;Third&lt;/li&gt;<br />
+          &nbsp;&nbsp;&lt;li&gt;Forth&lt;/li&gt;<br />
+          &nbsp;&nbsp;&lt;li&gt;Fifth&lt;/li&gt;<br />
+          &nbsp;&nbsp;&lt;li&gt;Sixth&lt;/li&gt;<br />
+        &lt;/ul&gt;
+      </code>
+      </p>
+      <p>
+        You do not need your collection to be a unordered list of course, you may be limited in the markup you have to work with or
+        have other reasons for not choosing a list.<br />The following example shows how paragraphed content can be styled as a grid,
+        simply by providing a class on the container:<br />
+        <code>
+          &lt;div class="grid"&gt;<br />
+            &nbsp;&nbsp;&lt;p&gt;First&lt;/p&gt;<br />
+            &nbsp;&nbsp;&lt;p&gt;Second&lt;/p&gt;<br />
+            &nbsp;&nbsp;&lt;p&gt;Third&lt;/p&gt;<br />
+            &nbsp;&nbsp;&lt;p&gt;Forth&lt;/p&gt;<br />
+          &lt;/div&gt;
+        </code>
+      </p>
+      <p>
+        <h3>The JS</h3>
+        <code>
+          $('#items').gridify();
+        </code>
+        <p>- or -</p>
+        <code>
+          $('.grid').gridify();
+        </code>
+        
+        <h3>Optional Parameters</h3>
+        <ul>
+          <li>items_per_row <span>(defaults 4)</span></li>
+          <li>children <span>(defaults 'li')</span></li>
+        </ul>
+        <code>
+          $('#items').gridify({ items_per_row: 3, children: '.item' });
+        </code>
+      </p>
+
+      <h2 id="demos">Demos</h2>
+      <p>
+        <a href="demo1.html" title="Demo 1">Demo 1 - General content</a>
+        <a href="demo2.html" title="Demo 2">Demo 2 - Photo gallery</a>
+        <a href="http://mattlayton.com" title="Production example">Production example - mattlayton.com</a>
+      </p>
+
+      <h2>Downloads</h2>
+      <ul>
+        <li>
+          <a href="js/jquery.smartresize.js" title="Smartresize download">jquery.smartresize.js</a>
+        </li>
+        <li>
+          <a href="js/jquery.gridify.js" title="Gridify download">jquery.gridify.js</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </body>
+</html>

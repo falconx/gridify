@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<title>Gridify | jQuery Plugin</title>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/jquery-ui-git.css" type="text/css" media="all" /> 
+    <script src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
+    <script src="js/jquery.smartresize.js"></script>
+    <script src="js/jquery.gridify.js"></script>
+
+    <style type="text/css">
+      body {
+        padding: 0;
+        margin: 0;
+      }
+
+      ul#items {
+        width: 60%;
+        margin: 20px auto;
+      }
+
+      ul#items li {
+        background: #ccc;
+        margin: 15px 8px;
+        padding: 10px;
+      }
+
+      li img {
+        margin: 5px 0 0;
+        display: block;
+      }
+
+      #top {
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        padding: 15px 0;
+        background: #444;
+        color: #fff;
+        font-family: monospace;
+      }
+
+      /*** Slider ***/
+      #slider-container { width: 100%; text-align: center; padding: 15px 0; background: #ccc; }
+      #slider { width: 40%; margin: 0 auto; }
+    </style>
+
+    <script>
+      $(window).load(function() {
+        $('#items').gridify({ items: 3 });
+      });
+
+      $(function() {
+        $('#slider').slider({
+          range: 'max',
+          min: 1,
+          max: 8,
+          value: 3,
+          slide: function( event, ui ) {
+            $('#top span').text( ui.value );
+            $('#items').gridify({ items: ui.value });
+          }
+        });
+      });
+    </script>
+
+	</head>
+	<body>
+    <div id="top">
+      $('#items').gridify({ items: <span>3</span> });
+    </div>
+
+    <div id="slider-container">
+      <div id="slider"></div>
+    </div>
+
+		<ul id="items">
+      <li>Lorem ipsum dolor. <img src="images/test-3.jpg" alt="" /></li>
+			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non diam ut tortor adipiscing facilisis. Phasellus sit amet felis est. Mauris eu posuere magna. Proin egestas arcu nec massa tristique eget aliquet nisi congue. Nunc nec sem metus. Integer vulputate ante vitae ante fringilla iaculis. Curabitur sed sollicitudin lectus. Suspendisse bibendum nunc ut erat laoreet condimentum. Aenean varius gravida malesuada. Aliquam a urna risus.</li>
+			<li><h2>Header</h2>Lorem ipsum dolor sit amet, consectetur. Aliquam a urna risus.<h3>Sub Header</h3><ul><li>List item A</li><li>List item B</li><li>List item C</li></ul></li>
+			<li>Lorem <strong>ipsum dolor sit amet, Donec non diam ut tortor adipiscing facilisis.</strong> Phasellus sit amet felis est. <p><i>Mauris eu posuere magna. Proin egestas arcu nec massa tristique eget aliquet nisi congue. Nunc nec sem metus. Integer vulputate ante vitae ante fringilla iaculis. Curabitur sed sollicitudin lectus. Suspendisse bibendum nunc ut erat laoreet condimentum.</i></p><u>Aenean varius gravida malesuada. Aliquam a urna risus.</u></li>
+			<li>Phasellus sit amet felis est. Mauris eu posuere magna. Proin egestas arcu nec massa tristique eget aliquet nisi congue. Nunc nec sem metus. Integer vulputate ante vitae ante fringilla iaculis. Curabitur sed sollicitudin lectus. Suspendisse bibendum nunc ut erat laoreet condimentum. Aenean varius gravida malesuada. Aliquam a urna risus.<img src="images/test-1.jpg" alt="" /></li>
+			<li>adipiscing elit. Donec non diam ut tortor adipiscing facilisis. Phasellus sit amet felis est. Mauris eu posuere magna. Proin egestas arcu nec massa tristique eget aliquet nisi congue. Nunc nec sem metus. Integer vulputate ante vitae ante fringilla iaculis. Curabitur sed sollicitudin lectus. Suspendisse bibendum nunc ut erat laoreet condimentum. Aenean varius gravida malesuada. Aliquam a urna risus.<img src="images/test-4.jpg" alt="" /></li>
+			<li>diam ut tortor adipiscing facilisis. Phasellus sit amet felis est. Mauris eu posuere magna. Proin egestas arcu nec massa tristique eget aliquet nisi congue. Nunc nec sem metus. Integer vulputate ante vitae ante fringilla iaculis. Curabitur sed sollicitudin lectus. Suspendisse bibendum nunc ut erat laoreet condimentum. Aenean varius gravida malesuada. Aliquam a urna risus.</li>
+			<li>Lamet, consectetur adipiscing elit. Donec non diam ut tortor adipiscing facilisis. Phasellus sit amet felis est. Mauris eu posuere magna. Proin egestas arcu nec massa tristique eget aliquet nisi congue. Nunc nec sem metus. Integer vulputate ante vitae ante fringilla iaculis. Curabitur sed sollicitudin lectus. Suspendisse bibendum nunc ut erat laoreet condimentum. Aenean varius gravida malesuada. Aliquam a urna risus.</li>
+		</ul>
+	</body>
+</html>
