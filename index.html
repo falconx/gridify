@@ -1,98 +1,55 @@
 <html>
   <head>
     <title>Gridify | jQuery Plugin</title>
-
-    <style type="text/css">
-      body {
-        padding: 0;
-        margin: 0;
-        text-align: center;
-        line-height: 1.5;
-      }
-
-      body > div {
-        width: 960px;
-        margin: 20px auto;
-      }
-
-      h2 {
-        margin: 50px 0 0;
-        border-bottom: 2px solid #222;
-      }
-
-      h3 {
-        margin: 40px 0 0;
-      }
-
-      a {
-        display: block;
-      }
-
-      strong {
-        border-bottom: 1px dashed #777;
-        padding: 0 3px 2px;
-      }
-
-      ul, ol, li {
-        padding: 0;
-        margin: 0;
-      }
-
-      ul, ol {
-        list-style: none;
-      }
-
-      li {
-        font-weight: bold;
-      }
-
-      li > span {
-        font-weight: normal;
-      }
-
-      code {
-        display: block;
-        color: #888;
-        font-size: 0.9em;
-        line-height: 1.7;
-        padding: 8px;
-        text-align: left;
-        background: #eee;
-        border: 1px dashed #bbb;
-        max-width: 450px;
-        margin: 20px auto 0;
-      }
-    </style>
-
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
 
-    <div>
+    <div id="header">
+      <div class="container">
+        <a class="mattlayton" href="http://mattlayton.com" title="Matt Layton">mattlayton.com</a>
+        <a class="git" href="https://github.com/falconx/gridify" title="Fork on GitHub">Fork on GitHub</a>
+      </div>
+    </div>
+
+    <div id="main" class="container">
 
       <h1>Gridify | jquery.gridify.js</h1>
 
+      <ul id="nav">
+        <li><a href="#what" title="What is Gridify">what?</a></li>
+        <li><a href="#how" title="How to use Gridify">how to use</a></li>
+        <li><a href="#examples" title="Gridify examples">examples</a></li>
+        <li><a href="#options" title="Gridify options">options</a></li>
+        <li><a href="#download" title="Download">download</a></li>
+      </ul>
+
+<!-- What -->
+
+      <h2 id="what">What?</h2>
       <p>
-      <i>Need a collection of elements to appear in a grid-like fashion?</i> The <strong>Gridify</strong> jQuery plugin makes this
-      simple...
+        <strong>Gridify</strong> is a jQuery tool for displaying content in a grid-like fashion.<br />
+        The plugin depends on <strong>smartresize</strong> to allow for a more efficient transition when
+        resizing the window.
+      </p>
+      <p>
+        <img src="images/example.png" alt="" />
       </p>
 
-      <p>
-        Gridify depends on the <b>smartresize</b> jQuery plugin for smoother window resize performance and should be loaded
-        <i>before</i> the Gridify script.
-      </p>
+<!-- How -->
 
-      <h2 id="user">How to use</h2>
-      <p>
-      Load the <b>jQuery</b>, <b>smartresize</b> and <strong>gridify</strong> <i>(Keep this order)</i>:
+      <h2 id="how">How to use</h2>
+      
+      Load the scripts, the order <i>is</i> important:<br />
+
       <code>
         &lt;script src="http://code.jquery.com/jquery.min.js"&gt;&lt;/script&gt;<br />
         &lt;script src="js/jquery.smartresize.js"&gt;&lt;/script&gt;<br />
         &lt;script src="js/jquery.gridify.js"&gt;&lt;/script&gt;
       </code>
-      </p>
 
-      <p>
-      Typical markup scenario, but <i>not</i> limited to:<br />
+      Create the markup, the following is a 'typical' markup scenario:<br />
+      
       <code>
         &lt;ul id="items"&gt;<br />
           &nbsp;&nbsp;&lt;li&gt;First&lt;/li&gt;<br />
@@ -103,72 +60,98 @@
           &nbsp;&nbsp;&lt;li&gt;Sixth&lt;/li&gt;<br />
         &lt;/ul&gt;
       </code>
-      </p>
-      <p>
-        You do not need your collection to be a unordered list of course, you may be limited in the markup you have to work with or
-        have other reasons for not choosing a list.<br />The following example shows how paragraphed content can be styled as a grid,
-        simply by providing a class on the container:<br />
-        <code>
-          &lt;div class="grid"&gt;<br />
-            &nbsp;&nbsp;&lt;p&gt;First&lt;/p&gt;<br />
-            &nbsp;&nbsp;&lt;p&gt;Second&lt;/p&gt;<br />
-            &nbsp;&nbsp;&lt;p&gt;Third&lt;/p&gt;<br />
-            &nbsp;&nbsp;&lt;p&gt;Forth&lt;/p&gt;<br />
-          &lt;/div&gt;
-        </code>
-      </p>
-      <p>
-        <h3>The JS</h3>
-        <code>
-          $('#items').gridify();
-        </code>
-        <p>- or -</p>
-        <code>
-          $('.grid').gridify();
-        </code>
-        <p>
-          The above could be called on <b>$(document).ready()</b> however,<br />if your content contains images you will want to use
-          <b>$(window).load()</b> to allow the script to perform calculations on the loaded image dimentions.
-        </p>
-        
-        <h3>Optional Parameters</h3>
-        <ul>
-          <li>items <span>(how many items per row, defaults 4)</span></li>
-          <li>children <span>(direct child element identifier, defaults 'li')</span></li>
-        </ul>
-        <code>
-          $('#items').gridify({ items_per_row: 3, children: '.item' });
-        </code>
 
-        <h3>Finally...</h3>
-        <p>
-          Apply styling as you would normally.
-        </p>
+      Gridify does not however limit you to a list structure or ID attribute to identify the grid container,
+      the next example uses a class and a collection of <i>paragraph</i> elements to be formatted:<br />
+
+      <code>
+        &lt;div class="grid"&gt;<br />
+          &nbsp;&nbsp;&lt;p&gt;First&lt;/p&gt;<br />
+          &nbsp;&nbsp;&lt;p&gt;Second&lt;/p&gt;<br />
+          &nbsp;&nbsp;&lt;p&gt;Third&lt;/p&gt;<br />
+          &nbsp;&nbsp;&lt;p&gt;Forth&lt;/p&gt;<br />
+        &lt;/div&gt;
+      </code>
+
+      Next, the JavaScript - simply call .gridify() on the collection container.<br />
+      <i>By default Gridify will look for 'li' elements inside your container</i><br />
+
+      <code>
+        $('#items').gridify();
+      </code>
+
+      Another example:<br />
+
+      <code>
+        $('.grid').gridify({ children: 'p' });
+      </code>
+
+      <p>
+      Here were able to apply the grid formatting to all containers with the class <i>grid</i> and specify
+      that children elements we want to act on are '<i>p</i>' tags.
       </p>
 
-      <h2 id="demos">Demos</h2>
-      <p>
-        <a href="demo1.html" title="Demo 1">Demo 1 - General content</a>
-        <a href="demo2.html" title="Demo 2">Demo 2 - Photo gallery</a>
-        <a href="http://mattlayton.com" title="Production example">Production example - mattlayton.com</a>
-      </p>
+      Specifying how many items should appear on a row:<br />
 
-      <h2>Downloads</h2>
-      <p>
-        <ul>
-          <li>
-            <a href="js/jquery.smartresize.js" title="Smartresize download">jquery.smartresize.js</a>
-          </li>
-          <li>
-            <a href="js/jquery.gridify.js" title="Gridify download">jquery.gridify.js</a>
-          </li>
-        </ul>
-      </p>
+      <code>
+        $('.grid').gridify({ children: 'p', items: 3 });
+      </code>
 
-      <h2>Help improve Gridify</h2>
-      <p>
-        Go ahead, fork it... <a href="https://github.com/falconx/gridify" title="Gridify">Fork Gridify on Git</a>
-      </p>
+      <strong>Important - When dealing with images</strong><br />
+      When images are part of your content you will want to call Gridify after all images are loaded so that the
+      true image dimentions can be considered. Your code should look something like this:<br />
+
+      <code>
+        $(window).load(function() {<br />
+        &nbsp;&nbsp;$('.grid').gridify();<br />
+        });
+      </code>
+
+<!-- Examples -->
+
+      <h2 id="examples">Examples</h2>
+      <ul>
+        <li><a href="demo1.html" title="Demo 1">Demo 1 - Generic content</a></li>
+        <li><a href="demo2.html" title="Demo 2">Demo 2 - Photo gallery</a></li>
+        <li><a href="http://mattlayton.com" title="Production Demo">Production demo - mattlayton.com</a></li>
+      </ul>
+
+<!-- Options -->
+
+      <h2 id="options">Options</h2>
+
+      <table>
+        <tr>
+          <th>Option</th>
+          <th>Description</th>
+          <th>Examples</th>
+        </tr>
+        <tr>
+          <td>items</td>
+          <td>How many items to display per row.</td>
+          <td>1, 2, 3...</td>
+        </tr>
+        <tr>
+          <td>children</td>
+          <td>Direct child selector</td>
+          <td>'li', 'p', '.item'</td>
+        </tr>
+      </table>
+
+<!-- Download -->
+
+      <h2 id="download">Download</h2>
+
+      <ul>
+        <li><a href="js/jquery.smartresize.js" title="Smart Resize">jquery.smartresize.js</a></li>
+        <li><a href="js/jquery.gridify.js" title="Gridify">jquery.gridify.js</a></li>
+      </ul>
+
+<!-- Fork -->
+
+      <h2 id="fork">Fork Gridify</h2>
+
+      <a href="https://github.com/falconx/gridify" title="Fork on GitHub">Fork on GitHub</a>
 
     </div>
 

@@ -1,0 +1,147 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Average);
+
+body {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  line-height: 1.5;
+  font-family: 'Average', serif;
+  background: #efefef url('images/background.png') repeat-x;
+}
+
+h1 {
+  text-indent: -9999px;
+  height: 92px;
+  width: 177px;
+  margin: 0 auto 40px;
+  background: url('images/gridify.png') no-repeat;
+}
+
+h2 {
+  color: #35c4e3;
+  font-family: 'Lobster', cursive;
+  font-weight: normal;
+  font-size: 2.5em;
+  margin: 0 0 10px;
+}
+
+h3 {
+  margin: 40px 0 0;
+}
+
+a { display: block; }
+
+#nav a {
+  display: inline;
+  color: #222;
+  text-decoration: none;
+}
+
+#nav li:hover {
+  background: #35c4e3;
+
+   -o-transition:     all .6s ease-in-out;
+  -ms-transition:     all .6s ease-in-out;
+  -moz-transition:    all .6s ease-in-out;
+  -webkit-transition: all .6s ease-in-out;
+  transition:         all .6s ease-in-out;
+}
+
+#nav li:hover a {
+  color: #fff;
+
+   -o-transition:     all .6s ease-in-out;
+  -ms-transition:     all .6s ease-in-out;
+  -moz-transition:    all .6s ease-in-out;
+  -webkit-transition: all .6s ease-in-out;
+  transition:         all .6s ease-in-out;
+}
+
+p {
+  margin: 0 0 40px;
+}
+
+strong {
+  border-bottom: 1px dashed #777;
+  padding: 0 3px 2px;
+}
+
+ul, ol, li {
+  padding: 0;
+  margin: 0;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0 0 40px;
+}
+
+li {
+  font-weight: bold;
+}
+
+li > span {
+  font-weight: normal;
+}
+
+table { margin: 40px auto; border-spacing: 0; }
+table th { color: #222; text-transform: uppercase; }
+table td { padding: 10px 25px; }
+table tr:nth-child(even) { background: #ddd; }
+table tr > td:first-child { font-weight: bold; }
+
+code {
+  display: block;
+  color: #888;
+  font-size: 0.9em;
+  line-height: 1.7;
+  padding: 8px;
+  text-align: left;
+  background: #fff;
+  border: 1px dashed #bbb;
+  max-width: 450px;
+  margin: 20px auto;
+}
+
+#main {
+  margin: 20px auto;
+}
+
+#header {
+  height: 51px;
+  margin: 0 0 40px;
+  background: url('images/header.png') repeat-x;
+}
+
+#header a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#header a {
+ float: left;
+  height: 40px;
+  line-height: 2.7;
+  padding: 0 0 0 35px;
+  margin: 0 40px 0 0;
+}
+
+.mattlayton { background: url('images/mattlayton.png') 0 center no-repeat; }
+.git { background: url('images/git.png') 0 center no-repeat; }
+
+#nav {
+  margin: 0 0 70px;
+}
+
+#nav li {
+  display: inline;
+  padding: 10px 17px;
+  background: #fff;
+}
