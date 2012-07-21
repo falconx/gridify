@@ -15,6 +15,15 @@
         margin: 20px auto;
       }
 
+      h2 {
+        margin: 50px 0 0;
+        border-bottom: 2px solid #222;
+      }
+
+      h3 {
+        margin: 40px 0 0;
+      }
+
       a {
         display: block;
       }
@@ -68,14 +77,15 @@
       </p>
 
       <p>
-        Gridify depends on the <b>smartresize</b> jQuery plugin for smoother resize performance and should be loaded
+        Gridify depends on the <b>smartresize</b> jQuery plugin for smoother window resize performance and should be loaded
         <i>before</i> the Gridify script.
       </p>
 
       <h2 id="user">How to use</h2>
       <p>
-      Load the <b>smartresize</b> and <strong>gridify</strong> plugins <i>(Keep this order)</i>:
+      Load the <b>jQuery</b>, <b>smartresize</b> and <strong>gridify</strong> <i>(Keep this order)</i>:
       <code>
+        &lt;script src="http://code.jquery.com/jquery.min.js"&gt;&lt;/script&gt;<br />
         &lt;script src="js/jquery.smartresize.js"&gt;&lt;/script&gt;<br />
         &lt;script src="js/jquery.gridify.js"&gt;&lt;/script&gt;
       </code>
@@ -116,15 +126,24 @@
         <code>
           $('.grid').gridify();
         </code>
+        <p>
+          The above could be called on <b>$(document).ready()</b> however,<br />if your content contains images you will want to use
+          <b>$(window).load()</b> to allow the script to perform calculations on the loaded image dimentions.
+        </p>
         
         <h3>Optional Parameters</h3>
         <ul>
-          <li>items_per_row <span>(defaults 4)</span></li>
-          <li>children <span>(defaults 'li')</span></li>
+          <li>items <span>(how many items per row, defaults 4)</span></li>
+          <li>children <span>(child element identifier, defaults 'li')</span></li>
         </ul>
         <code>
           $('#items').gridify({ items_per_row: 3, children: '.item' });
         </code>
+
+        <h3>Finally...</h3>
+        <p>
+          Apply styling as you would normally.
+        </p>
       </p>
 
       <h2 id="demos">Demos</h2>
@@ -135,14 +154,21 @@
       </p>
 
       <h2>Downloads</h2>
-      <ul>
-        <li>
-          <a href="js/jquery.smartresize.js" title="Smartresize download">jquery.smartresize.js</a>
-        </li>
-        <li>
-          <a href="js/jquery.gridify.js" title="Gridify download">jquery.gridify.js</a>
-        </li>
-      </ul>
+      <p>
+        <ul>
+          <li>
+            <a href="js/jquery.smartresize.js" title="Smartresize download">jquery.smartresize.js</a>
+          </li>
+          <li>
+            <a href="js/jquery.gridify.js" title="Gridify download">jquery.gridify.js</a>
+          </li>
+        </ul>
+      </p>
+
+      <h2>Help improve Gridify</h2>
+      <p>
+        Go ahead, fork it... <a href="https://github.com/falconx/gridify" title="Gridify">Fork Gridify on Git</a>
+      </p>
 
     </div>
 
